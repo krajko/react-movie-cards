@@ -23,6 +23,8 @@ const AddMovie = props => {
     if (submitted && Object.keys(formErrors).length === 0) {
       formValues.id = Math.round(Math.random() * 1000);
       formValues.canDelete = true;
+      formValues.rating = 0;
+      formValues.ratings = [];
       props.onAdd(formValues);
       setFormValues(initialValues);
       setFormErrors({});
@@ -63,15 +65,15 @@ const AddMovie = props => {
     <form className="form" onSubmit={handleSubmit}>
       <TextInput
         name="imageUrl"
-        label="Image URL"
+        label="Image URL:"
         value={formValues.imageUrl}
         changed={handleChange}
         error={formErrors.imageUrl}
       />
-      <TextInput name="title" label="Title" value={formValues.title} changed={handleChange} error={formErrors.title} />
+      <TextInput name="title" label="Title:" value={formValues.title} changed={handleChange} error={formErrors.title} />
       <TextInput
         name="subtitle"
-        label="Subtitle"
+        label="Subtitle:"
         value={formValues.subtitle}
         changed={handleChange}
         error={formErrors.subtitle}
@@ -79,7 +81,7 @@ const AddMovie = props => {
 
       <TextArea
         name="description"
-        label="Description"
+        label="Description:"
         value={formValues.description}
         changed={handleChange}
         error={formErrors.description}

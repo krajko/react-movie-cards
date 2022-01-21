@@ -1,8 +1,10 @@
 import React from 'react';
 
-const Button = ({ children, type, clicked }) => {
+const Button = ({ children, type, clicked, deleteBtn }) => {
+  let classes = ['my-btn', deleteBtn ? 'delete' : null].join(' ');
+
   return (
-    <button type={type} className="my-btn" onClick={clicked}>
+    <button type={type} className={classes} onClick={clicked}>
       {children}
     </button>
   );

@@ -1,8 +1,8 @@
 .my-btn {
   padding: 10px 20px;
   font-size: 18px;
-  font-weight: 500;
-  background-color: #343a40;
+  font-weight: 800;
+  background-color: #394047;
   color: white;
   outline: none;
   border: none;
@@ -11,6 +11,13 @@
 }
 
 .my-btn:hover {
-  background-color: #343a40da;
+  background-color: #485058;
   cursor: pointer;
+}
+
+.my-btn.delete {
+  position: absolute;
+  right: 12px;
+  top: 12px;
+  padding: 8px 16px;
 }
