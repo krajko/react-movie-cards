@@ -23,8 +23,6 @@ const AddMovie = props => {
     if (submitted && Object.keys(formErrors).length === 0) {
       formValues.id = Math.round(Math.random() * 1000);
       formValues.canDelete = true;
-      formValues.rating = 0;
-      formValues.ratings = [];
       props.onAdd(formValues);
       setFormValues(initialValues);
       setFormErrors({});
