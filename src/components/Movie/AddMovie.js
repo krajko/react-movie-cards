@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import TextInput from '../UI/TextInput';
 import TextArea from '../UI/TextArea';
+import Button from '../UI/Button';
 
 const AddMovie = props => {
   const initialValues = {
@@ -21,6 +22,7 @@ const AddMovie = props => {
   useEffect(() => {
     if (submitted && Object.keys(formErrors).length === 0) {
       formValues.id = Math.round(Math.random() * 1000);
+      formValues.canDelete = true;
       props.onAdd(formValues);
       setFormValues(initialValues);
       setFormErrors({});
@@ -83,7 +85,7 @@ const AddMovie = props => {
         error={formErrors.description}
       />
 
-      <button type="submit">Add Movie</button>
+      <Button type="submit">Add Movie</Button>
     </form>
   );
 };

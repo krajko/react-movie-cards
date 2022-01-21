@@ -3,7 +3,9 @@ import PropTypes from 'prop-types';
 
 import StarRating from '../StarRating';
 
-const MovieCard = ({ movie }) => (
+import Button from '../UI/Button';
+
+const MovieCard = ({ movie, onDelete }) => (
   <div className="movie-card">
     <div className="movie-card card">
       <img className="card-img-top" src={movie.imageUrl} alt="" />
@@ -22,6 +24,7 @@ const MovieCard = ({ movie }) => (
           <div className="card-footer-badge float-right badge badge-primary badge-pill">{movie.rating}</div>
         </div>
       </div>
+      {movie.canDelete ? <Button clicked={() => onDelete(movie.id)}>Delete</Button> : null}
     </div>
   </div>
 );

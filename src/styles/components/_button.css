@@ -1,0 +1,16 @@
+.my-btn {
+  padding: 10px 20px;
+  font-size: 18px;
+  font-weight: 500;
+  background-color: #343a40;
+  color: white;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 150ms ease-in-out;
+}
+
+.my-btn:hover {
+  background-color: #343a40da;
+  cursor: pointer;
+}
